@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Search from './Pages/Search';
 import Navbar from './Pages/Navbar/Navbar';
+import ScrollImages from './Pages/Scroll/ScrollImages';
 function App() {
   return (
     <div className="App">
@@ -11,8 +12,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Search />} />
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/scroll" element={<ScrollImages />} />
+          {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
       </div>
     </Router>

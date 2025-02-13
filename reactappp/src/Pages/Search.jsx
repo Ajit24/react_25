@@ -46,7 +46,7 @@ console.log("api call", input);
           onChange={(e)=>setInput(e.target.value)}
          onFocus={()=>setShowResults(true)}
          onBlur={()=>setShowResults(false)}
-          />
+          /> 
 {    showResults &&      <div className="results-container">
             {results.map((r)=>(
               <span className="result" key={r.id}>
