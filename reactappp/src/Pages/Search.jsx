@@ -36,7 +36,7 @@ console.log("api call", input);
 
   return (
     <div>
-      <h3>auto complete search ...</h3> <hr />
+      <h3>auto complete search ...</h3>
       <div>
         <input type="text" 
         id="search"
