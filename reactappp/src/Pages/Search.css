@@ -1,0 +1,32 @@
+#search{
+    width: 40%;
+    height: 35px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid rgb(85, 85, 232);
+    border-radius: 10px;
+  
+  }
+  
+  .results-container{
+    max-width:50% ;
+    margin: auto;
+    border: 1px solid rgb(124, 130, 115);
+    padding: 5px;
+    text-align: left;
+    max-height: 450px;
+    overflow-y: scroll;
+  }
+  
+  .result{
+  display: block;
+  padding: 5px;
+  
+  }
+  
+  .result:hover{
+    background-color: beige;
+  cursor: pointer;
+  
+  }
+  
