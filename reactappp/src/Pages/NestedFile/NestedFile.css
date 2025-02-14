@@ -1,0 +1,154 @@
+/* File System Container */
+.file-system {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    padding: 2rem;
+  }
+  
+  .file-system-header {
+    max-width: 48rem;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .file-system-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+  }
+  
+  .file-system-header p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0.25rem 0 0;
+  }
+  
+  .file-system-container {
+    max-width: 48rem;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+  }
+  
+  /* Toolbar */
+  .file-system-toolbar {
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toolbar-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .toolbar-count {
+    font-size: 0.75rem;
+    color: #6b7280;
+  }
+  
+  /* File Node */
+  .file-node {
+    width: 100%;
+  }
+  
+  .file-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-left: calc(var(--level) * 1.5rem + 0.5rem);
+    transition: background-color 0.2s;
+  }
+  
+  .file-item:hover {
+    background-color: #f9fafb;
+  }
+  
+  .file-item.hovered {
+    background-color: #f9fafb;
+  }
+  
+  .file-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .chevron {
+    margin-right: 0.25rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+  
+  .file-icon {
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .icon.folder,
+  .icon.folder-open {
+    color: #3b82f6;
+  }
+  
+  .icon.file {
+    color: #6b7280;
+  }
+  
+  .file-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  /* Actions */
+  .actions {
+    position: absolute;
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .action-button {
+    padding: 0.25rem;
+    border-radius: 9999px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+  }
+  
+  .action-button:hover {
+    background-color: #e5e7eb;
+  }
+  
+  /* Children Container */
+  .children {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  .children.open {
+    max-height: 100vh;
+  }

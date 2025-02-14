@@ -6,6 +6,9 @@ import Navbar from './Pages/Navbar/Navbar';
 import ScrollImages from './Pages/Scroll/ScrollImages';
 import TabForm from './Pages/TabForm/TabForm';
 import Pagination from './Pages/Pagination/Pagination';
+import OtpInput from './Pages/OtpInput/OtpInput';
+import NestedFile from './Pages/NestedFile/NestedFile';
+import Nested2 from './Pages/NestedFile/Nested2'
 function App() {
   return (
     <div className="App">
@@ -17,6 +20,10 @@ function App() {
           <Route path="/scroll" element={<ScrollImages />} />
           <Route path="/tabs" element={<TabForm />} />
           <Route path="/pagination" element={<Pagination />} />
+          <Route path="/otp" element={<OtpInput />} />
+          <Route path="/file" element={<NestedFile />} />
+          <Route path="/nested" element={<Nested2 />} />
+           
         </Routes>
       </div>
     </Router>

@@ -12,6 +12,12 @@ const Navbar = () => {
         <li><Link to="/Scroll" className="nav-link">ScrollImages</Link></li>
         <li><Link to="/tabs" className="nav-link">Tabs_Form</Link></li>
         <li><Link to="/pagination" className="nav-link">Pagination</Link></li>
+        <li><Link to="/otp" className="nav-link">OTP</Link></li>
+        <li><Link to="/file" className="nav-link">nested_file</Link></li>
+        <li><Link to="/nested" className="nav-link">nested_file2</Link></li>
+
+
+
 
       </ul>
     </nav>
