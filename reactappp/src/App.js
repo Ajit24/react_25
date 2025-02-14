@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Search from './Pages/Search';
 import Navbar from './Pages/Navbar/Navbar';
 import ScrollImages from './Pages/Scroll/ScrollImages';
+import TabForm from './Pages/TabForm/TabForm';
 function App() {
   return (
     <div className="App">
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Search />} />
           <Route path="/scroll" element={<ScrollImages />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/tabs" element={<TabForm />} />
         </Routes>
       </div>
     </Router>
