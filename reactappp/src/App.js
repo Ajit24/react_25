@@ -10,6 +10,7 @@ import OtpInput from './Pages/OtpInput/OtpInput';
 import NestedFile from './Pages/NestedFile/NestedFile';
 import Nested2 from './Pages/NestedFile/Nested2'
 import Carousel from './Pages/Carousel/Carousel';
+import OutsideClickDemo from './Pages/OutsideClickDemo/OutsideClickDemo';
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
           <Route path="/file" element={<NestedFile />} />
           <Route path="/nested" element={<Nested2 />} />
           <Route path="/carousel" element={<Carousel />} />
+          <Route path='/hooks' element={<OutsideClickDemo/>}></Route>
 
            
         </Routes>

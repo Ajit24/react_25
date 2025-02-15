@@ -16,6 +16,9 @@ const Navbar = () => {
         <li><Link to="/file" className="nav-link">nested_file</Link></li>
         <li><Link to="/nested" className="nav-link">nested_file2</Link></li>
         <li><Link to="/carousel" className="nav-link">carousel</Link></li>
+        <li><Link to="/hooks" className="nav-link">custom_hook</Link></li>
+
+
 
         
 
