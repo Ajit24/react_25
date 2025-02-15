@@ -15,7 +15,9 @@ const Navbar = () => {
         <li><Link to="/otp" className="nav-link">OTP</Link></li>
         <li><Link to="/file" className="nav-link">nested_file</Link></li>
         <li><Link to="/nested" className="nav-link">nested_file2</Link></li>
+        <li><Link to="/carousel" className="nav-link">carousel</Link></li>
 
+        
 
 
 

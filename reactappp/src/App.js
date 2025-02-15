@@ -9,6 +9,7 @@ import Pagination from './Pages/Pagination/Pagination';
 import OtpInput from './Pages/OtpInput/OtpInput';
 import NestedFile from './Pages/NestedFile/NestedFile';
 import Nested2 from './Pages/NestedFile/Nested2'
+import Carousel from './Pages/Carousel/Carousel';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,8 @@ function App() {
           <Route path="/otp" element={<OtpInput />} />
           <Route path="/file" element={<NestedFile />} />
           <Route path="/nested" element={<Nested2 />} />
+          <Route path="/carousel" element={<Carousel />} />
+
            
         </Routes>
       </div>
