@@ -1,0 +1,89 @@
+Task : Write a higher-order component (HOC) to log component props.
+
+
+// src/components/withPropsLogger.js
+import React from 'react';
+
+const withPropsLogger = (WrappedComponent) => {
+  return class extends React.Component {
+    componentDidMount() {
+      console.log('Component Props on Mount:', this.props);
+    }
+
+    componentDidUpdate(prevProps) {
+      console.log('Previous Props:', prevProps);
+      console.log('Current Props:', this.props);
+      
+      // Log changed props specifically
+      const changedProps = Object.keys(this.props).reduce((acc, key) => {
+        if (this.props[key] !== prevProps[key]) {
+          acc[key] = {
+            from: prevProps[key],
+            to: this.props[key]
+          };
+        }
+        return acc;
+      }, {});
+      
+      if (Object.keys(changedProps).length > 0) {
+        console.log('Changed Props:', changedProps);
+      }
+    }
+
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  };
+};
+
+export default withPropsLogger;
+
+// src/components/UserProfile.js
+import React from 'react';
+import withPropsLogger from './withPropsLogger';
+
+const UserProfile = ({ name, email, role }) => {
+  return (
+    <div className="p-4 border rounded shadow-sm">
+      <h2 className="text-xl font-bold mb-2">{name}</h2>
+      <p className="text-gray-600 mb-1">{email}</p>
+      <p className="text-gray-500">{role}</p>
+    </div>
+  );
+};
+
+export default withPropsLogger(UserProfile);
+
+// src/App.js
+import React, { useState } from 'react';
+import UserProfile from './components/UserProfile';
+
+const App = () => {
+  const [userData, setUserData] = useState({
+    name: 'John Doe',
+    email: 'john@example.com',
+    role: 'Developer'
+  });
+
+  const updateUserRole = () => {
+    setUserData(prev => ({
+      ...prev,
+      role: prev.role === 'Developer' ? 'Senior Developer' : 'Developer'
+    }));
+  };
+
+  return (
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">User Dashboard</h1>
+      <UserProfile {...userData} />
+      <button 
+        onClick={updateUserRole}
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+      >
+        Toggle Role
+      </button>
+    </div>
+  );
+};
+
+export default App;
