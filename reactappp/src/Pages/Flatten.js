@@ -52,3 +52,28 @@ const input = {
 //   company_customers: [ 'Ford', 'Nestle' ],
 //   skills: [ 'javascript', 'node.js', 'html' ]
 // }
+
+
+
+//Q2 : Flatten JavaScript Object with Recursion
+
+const flattenObject2 = (obj, prefix = "") =>
+    Object.keys(obj).reduce((acc, k) => {
+      const pre = prefix.length ? `${prefix}.` : "";
+      if (
+        typeof obj[k] === "object" &&
+        obj[k] !== null &&
+        Object.keys(obj[k]).length > 0
+      ) {
+        Object.assign(acc, flattenObject2(obj[k], pre + k));
+      } else {
+        acc[pre + k] = obj[k];
+      }
+      return acc;
+    }, {});
+    
+   console.log(flattenObject2({ a: { b: { c: 1 } }, d: 1 })); // { 'a.b.c': 1, d: 1 }
+
+
+// explanation:    Use Object.keys() combined with Array.prototype.reduce() to convert every leaf node to a flattened path node.
+// If the value of a key is an object, call the function recursively with the appropriate prefix to create the path using Object.assign().
