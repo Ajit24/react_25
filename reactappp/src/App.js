@@ -12,6 +12,7 @@ import Nested2 from './Pages/NestedFile/Nested2'
 import Carousel from './Pages/Carousel/Carousel';
 import OutsideClickDemo from './Pages/OutsideClickDemo/OutsideClickDemo';
 import MultiSearch from './Pages/MultiSearch/MultiSearch';
+import AllCheckboxes from './Pages/AllCheckboxes/AllCheckboxes';
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
           <Route path="/carousel" element={<Carousel />} />
           <Route path='/hooks' element={<OutsideClickDemo/>}></Route>
             <Route path="/multisearch" element={<MultiSearch />} />
+            <Route path="/allcheckboxes" element={<AllCheckboxes />} />
            
         </Routes>
       </div>

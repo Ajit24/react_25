@@ -18,6 +18,7 @@ const Navbar = () => {
         <li><Link to="/carousel" className="nav-link">carousel</Link></li>
         <li><Link to="/hooks" className="nav-link">custom_hook</Link></li>
         <li><Link to="/multisearch" className="nav-link">Multiple Filters</Link></li>
+        <li><Link to="/allcheckboxes" className="nav-link">AllCheckboxes</Link></li>
 
         
 
