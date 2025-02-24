@@ -48,4 +48,3 @@ for (let i = 1; i < numbers.length; i++) {
 console.log("The largest number is: " + largest); // Output: The largest number is: 35
 
 
-
