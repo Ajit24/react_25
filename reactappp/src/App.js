@@ -14,6 +14,7 @@ import OutsideClickDemo from './Pages/OutsideClickDemo/OutsideClickDemo';
 import MultiSearch from './Pages/MultiSearch/MultiSearch';
 import AllCheckboxes from './Pages/AllCheckboxes/AllCheckboxes';
 import LinkPreviewerExample from './Pages/LinkPreviewer/LinkPreviewer';
+import Test from './Test';
 function App() {
   return (
     <div className="App">
@@ -33,6 +34,7 @@ function App() {
             <Route path="/multisearch" element={<MultiSearch />} />
             <Route path="/allcheckboxes" element={<AllCheckboxes />} />
             <Route path="/linkpreviewer" element={<LinkPreviewerExample />} />
+            <Route path="/test" element={<Test />} />
            
         </Routes>
       </div>
