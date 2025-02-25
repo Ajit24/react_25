@@ -19,6 +19,7 @@ const Navbar = () => {
         <li><Link to="/hooks" className="nav-link">custom_hook</Link></li>
         <li><Link to="/multisearch" className="nav-link">Multiple Filters</Link></li>
         <li><Link to="/allcheckboxes" className="nav-link">AllCheckboxes</Link></li>
+        <li><Link to="/linkpreviewer" className="nav-link">Linkpreview</Link></li>
 
         
 

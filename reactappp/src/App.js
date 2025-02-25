@@ -13,6 +13,7 @@ import Carousel from './Pages/Carousel/Carousel';
 import OutsideClickDemo from './Pages/OutsideClickDemo/OutsideClickDemo';
 import MultiSearch from './Pages/MultiSearch/MultiSearch';
 import AllCheckboxes from './Pages/AllCheckboxes/AllCheckboxes';
+import LinkPreviewerExample from './Pages/LinkPreviewer/LinkPreviewer';
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,7 @@ function App() {
           <Route path='/hooks' element={<OutsideClickDemo/>}></Route>
             <Route path="/multisearch" element={<MultiSearch />} />
             <Route path="/allcheckboxes" element={<AllCheckboxes />} />
+            <Route path="/linkpreviewer" element={<LinkPreviewerExample />} />
            
         </Routes>
       </div>

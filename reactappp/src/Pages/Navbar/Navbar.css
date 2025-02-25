@@ -7,7 +7,7 @@
   .nav-list {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
   }
   
   .nav-link {
