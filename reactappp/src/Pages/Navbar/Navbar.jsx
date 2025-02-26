@@ -17,10 +17,12 @@ const Navbar = () => {
         <li><Link to="/nested" className="nav-link">nested_file2</Link></li>
         <li><Link to="/carousel" className="nav-link">carousel</Link></li>
         <li><Link to="/hooks" className="nav-link">custom_hook</Link></li>
+        <li><Link to="/fetchdata" className="nav-link">FetchDataHook</Link></li>
         <li><Link to="/multisearch" className="nav-link">Multiple Filters</Link></li>
         <li><Link to="/allcheckboxes" className="nav-link">AllCheckboxes</Link></li>
         {/* <li><Link to="/linkpreviewer" className="nav-link">Linkpreview</Link></li> */}
         <li><Link to='/test' className='nav-link'>Test</Link></li>
+
 
         
 

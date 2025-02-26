@@ -15,6 +15,7 @@ import MultiSearch from './Pages/MultiSearch/MultiSearch';
 import AllCheckboxes from './Pages/AllCheckboxes/AllCheckboxes';
 import LinkPreviewerExample from './Pages/LinkPreviewer/LinkPreviewer';
 import Test from './Test';
+import FetchDataHook from './Pages/FetchDataHook/FetchDataHook';
 function App() {
   return (
     <div className="App">
@@ -35,6 +36,7 @@ function App() {
             <Route path="/allcheckboxes" element={<AllCheckboxes />} />
             <Route path="/linkpreviewer" element={<LinkPreviewerExample />} />
             <Route path="/test" element={<Test />} />
+            <Route path="/fetchdata" element={<FetchDataHook />} />
            
         </Routes>
       </div>
