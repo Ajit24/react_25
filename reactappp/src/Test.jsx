@@ -1,108 +1,171 @@
-// import React, { useState } from "react";
-// function HideAndShowPassword(){
-//     const [show,setShow]=useState(false)
-//     const handleShow=()=>{
-//         setShow(!show)
+import React, { useState, useEffect, useCallback , useRef} from 'react';
+import './App.css';
+
+
+// const Stopwatch = () => {
+
+//   const [time, setTime] = useState(0);
+//   const [isRunning, setIsRunning] = useState(false);
+//   const [laps, setLaps] = useState([]);
+
+//   const formatTime = useCallback((timeInMs) => {
+//     const minutes = Math.floor(timeInMs / 60000);
+//     const seconds = Math.floor((timeInMs % 60000) / 1000);
+//     const milliseconds = Math.floor((timeInMs % 1000) / 10);
+
+//     return {
+//       minutes: minutes.toString().padStart(2, '0'),
+//       seconds: seconds.toString().padStart(2, '0'),
+//       milliseconds: milliseconds.toString().padStart(2, '0')
+//     };
+//   }, []);
+
+//   useEffect(() => {
+//     let intervalId;
+//     if (isRunning) {
+//       intervalId = setInterval(() => {
+//         setTime(prevTime => prevTime + 10);
+//       }, 10);
 //     }
-//     return(
-//         <div className="container">
-//             <input type={show?"text":"password"} />
-//             <label onClick={handleShow}>{show?"Hide":"Show"}</label>
-//         </div>
-//     );
-// }
-// export default HideAndShowPassword;
+//     return () => clearInterval(intervalId);
+//   }, [isRunning]);
 
+//   const handleStartPause = () => {
+//      setIsRunning(!isRunning);
+//     // if (isRunning) {
+//     //   // Add lap when pausing
+//     //   const formattedTime = formatTime(time);
+//     //   setLaps(prevLaps => [...prevLaps, {
+//     //     number: prevLaps.length + 1,
+//     //     time: `${formattedTime.minutes}:${formattedTime.seconds}.${formattedTime.milliseconds}`
+//     //   }]);
+//     // }
+//   };
 
+//   const handleReset = () => {
+//     setIsRunning(false);
+//     setTime(0);
+//     setLaps([]);
+//   };
 
-// import React, { useState } from "react";
-// //import "./Filter.css";
-
-// const Filter = () => {
-
-//      // make a input box
-//   let data = ["Sun", "Son", "Some", "Rest", "Test", "Clear", "Many"];
-//   const [word, setWord] = useState([]);
-
-//   console.log(word);
-
-//   const dataChange = (e) => {
-//     const { value } = e.target;
-//     console.log(value);
-
-//     let arr = data.filter((post) =>
-//       post.toLowerCase().includes(value.toLowerCase())
-//     );
-//     // console.log(arr)
-
-//     if (value.length != 0) {
-//       setWord([...arr]);
-//     }
-// }
-//     // else
+//   const { minutes, seconds, milliseconds } = formatTime(time);
 
 //   return (
-//     <div className="App">
-//       <div className="outBox">
-//         <input type="text" onChange={dataChange} style = {{height:"35px", width:"155px"}} />
-//         {word.map((ele) => {
-//           return <p>{ele}</p>;
-//         })}
+//     <div className="stopwatch-container">
+//       <div className={`stopwatch-card ${isRunning ? 'running' : ''}`}>
+//         <div className="stopwatch-header">
+//           <span className="timer-icon">⏱️</span>
+//           <h1 className="stopwatch-display">
+//             {minutes}:{seconds}
+//             <span className="stopwatch-milliseconds">.{milliseconds}</span>
+//           </h1>
+//         </div>
+
+//         <div className="controls">
+//           <button
+//             className={`control-button ${isRunning ? 'pause-button' : 'start-button'}`}
+//             onClick={handleStartPause}
+//           >
+//             {isRunning ? (
+//               <>
+//                 <span className="button-icon">⏸</span>
+//                 Pause
+//               </>
+//             ) : (
+//               <>
+//                 <span className="button-icon">▶️</span>
+//                 Start
+//               </>
+//             )}
+//           </button>
+//           <button className="control-button reset-button" onClick={handleReset}>
+//             <span className="button-icon">🔄</span>
+//             Reset
+//           </button>
+//         </div>
+
+//         {/* {laps.length > 0 && (
+//           <div className="laps-container">
+//             {laps.map((lap) => (
+//               <div key={lap.number} className="lap-item">
+//                 <span className="lap-number">Lap {lap.number}</span>
+//                 <span className="lap-time">{lap.time}</span>
+//               </div>
+//             ))}
+//           </div>
+//         )} */}
 //       </div>
 //     </div>
-//   )
-//     }
-
-// export default Filter;
-
-
-// import React from "react";
-//  function App() {
-//   const items = [
-// 	{ id: 1, text: "Item 1" },
-// 	{ id: 2, text: "Item 2" },
-//   ];
-//   const listItems = items.map((item, index) => <li key={index}>{item.text}</li>);
-
-//   //   const listItems = items.map((item) => <li key={item.id}>{item.text}</li>);   
-//   return <ul>{listItems}</ul>;
-// }
-//  export default App;
-
-
-
-// import React, { useMemo } from "react";
-//  function App() {
-//   const numbers = [1, 2, 3, 4, 5, 6];
-//   const doubledNumbers = useMemo(() => numbers.map((n) => n * 2), []);
-//  return (
-// 	<div>
-//   	{doubledNumbers.map((number) => (
-//     	<p key={number}>{number}</p>
-//   	))}
-// 	</div>
 //   );
-// }
- 
-// export default App;  // 2 4 6 8 10 12  // React will re-render the component only when the dependencies change. Here, it's the numbers array.  // This is a good optimization for
+// };
+
+// export default Stopwatch;
 
 
-import React, { useCallback, useState } from "react";
-function App() {
-  const [count, setCount] = useState(0);
- 
-  const increment = useCallback(() => {
-	setCount(count + 1);
-//     setCount((prevCount) => prevCount + 1);
+const TypeWrite = () => {
+  const [displayText, setDisplayText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const [charIndex, setCharIndex] = useState(0);
+  
+//   const words = ["ZFUNDS", "XFUNDS", "YFUNDS"];
+const words = ["coding is fun", "first learn javascript", "then you can start react.js/angular"];
 
-  }, []);
-   return (
-	<div>
-  	<button onClick={increment}>Increment</button>
-  	<p>Count: {count}</p>
-	</div>
+  const typingRef = useRef(null);
+
+  useEffect(() => {
+    const typeNextChar = () => {
+      if (wordIndex >= words.length) {
+        // Reset to start the loop again
+        setWordIndex(0);
+        setDisplayText('');
+        setCharIndex(0);
+        return;
+      }
+
+      if (isTyping) {
+        // Typing phase
+        if (charIndex < words[wordIndex].length) {
+          setDisplayText(prev => prev + words[wordIndex][charIndex]);
+          setCharIndex(prev => prev + 1);
+        } else {
+          // Finished typing current word
+          setIsTyping(false);
+          setTimeout(() => {
+            // Pause before starting to delete
+            setIsTyping(false);
+          }, 1500);
+        }
+      } else {
+        // Deleting phase
+        if (charIndex > 0) {
+          setDisplayText(prev => prev.slice(0, -1));
+          setCharIndex(prev => prev - 1);
+        } else {
+          // Finished deleting, move to next word
+          setIsTyping(true);
+          setWordIndex(prev => prev + 1);
+        }
+      }
+    };
+
+    const speed = isTyping ? 150 : 100;
+    typingRef.current = setTimeout(typeNextChar, speed);
+
+    return () => {
+      if (typingRef.current) {
+        clearTimeout(typingRef.current);
+      }
+    };
+  }, [displayText, isTyping, wordIndex, charIndex, words]);
+
+  return (
+    <div className="typewriter-container">
+      <div className="typewriter-text">
+        {displayText}<span className="cursor"></span>
+      </div>
+    </div>
   );
-}
- 
-export default App;
+};
 
+export default TypeWrite;

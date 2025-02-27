@@ -1,39 +1,222 @@
-.App {
+.stopwatch-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  padding: 1rem;
+}
+
+.stopwatch-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.stopwatch-header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+}
+
+.timer-icon {
+  font-size: 2.5rem;
+}
+
+.button-icon {
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.stopwatch-display {
+  font-size: 4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #1f2937;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  font-family: monospace;
+}
+
+.stopwatch-milliseconds {
+  font-size: 2rem;
+  color: #6b7280;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 2rem;
+}
+
+.control-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.start-button {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pause-button {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  color: white;
+}
+
+.pause-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.2);
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.control-button:active {
+  transform: translateY(0);
+}
+
+.laps-container {
+  margin-top: 2rem;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 1rem;
+  background: rgba(243, 244, 246, 0.5);
+}
+
+.lap-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-family: monospace;
+}
+
+.lap-item:last-child {
+  border-bottom: none;
+}
+
+.lap-number {
+  color: #6b7280;
+}
+
+.lap-time {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
+.running .stopwatch-display {
+  animation: pulse 1s infinite;
+}
+
+/* Custom scrollbar for laps container */
+.laps-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.laps-container::-webkit-scrollbar-track {
+  background: rgba(243, 244, 246, 0.5);
+  border-radius: 4px;
+}
+
+.laps-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.laps-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* // ----- type write css ----------- */
+
+
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+  font-family: 'Arial', sans-serif;
+}
+
+.typewriter-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.1em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: white;
+  margin-left: 2px;
+  vertical-align: text-top;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .typewriter-text {
+    font-size: 2rem;
+  }
+}
