@@ -22,6 +22,9 @@ const Navbar = () => {
         <li><Link to="/allcheckboxes" className="nav-link">AllCheckboxes</Link></li>
         {/* <li><Link to="/linkpreviewer" className="nav-link">Linkpreview</Link></li> */}
         <li><Link to='/test' className='nav-link'>Test</Link></li>
+        <li><Link to='/dragdrop' className='nav-link'>DragDrop</Link></li>
+
+
 
 
         
