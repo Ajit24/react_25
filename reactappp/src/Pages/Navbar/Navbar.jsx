@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="nav-list">
         <li><Link to="/" className="nav-link">Search</Link></li>
-        <li><Link to="/Scroll" className="nav-link">ScrollImages</Link></li>
+        {/* <li><Link to="/Scroll" className="nav-link">ScrollImages</Link></li> */}
         <li><Link to="/tabs" className="nav-link">Tabs_Form</Link></li>
         <li><Link to="/pagination" className="nav-link">Pagination</Link></li>
         <li><Link to="/otp" className="nav-link">OTP</Link></li>
@@ -21,8 +21,10 @@ const Navbar = () => {
         <li><Link to="/multisearch" className="nav-link">Multiple Filters</Link></li>
         <li><Link to="/allcheckboxes" className="nav-link">AllCheckboxes</Link></li>
         {/* <li><Link to="/linkpreviewer" className="nav-link">Linkpreview</Link></li> */}
-        <li><Link to='/test' className='nav-link'>Test</Link></li>
+        {/* <li><Link to='/test' className='nav-link'>Test</Link></li> */}
         <li><Link to='/dragdrop' className='nav-link'>DragDrop</Link></li>
+        <li><Link to='/infinite-scroll' className='nav-link'>infinite_scroll</Link></li>
+
 
 
 

@@ -17,6 +17,7 @@ import LinkPreviewerExample from './Pages/LinkPreviewer/LinkPreviewer';
 import Test from './Test';
 import FetchDataHook from './Pages/FetchDataHook/FetchDataHook';
 import DragDrop from './Pages/DragDrop/DragDrop';
+import InfiniteScroll from './Pages/InfiniteScroll/InfiniteScroll';
 function App() {
   return (
     <div className="App">
@@ -25,7 +26,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Search />} />
-          <Route path="/scroll" element={<ScrollImages />} />
+          {/* <Route path="/scroll" element={<ScrollImages />} /> */}
           <Route path="/tabs" element={<TabForm />} />
           <Route path="/pagination" element={<Pagination />} />
           <Route path="/otp" element={<OtpInput />} />
@@ -39,6 +40,7 @@ function App() {
             <Route path="/test" element={<Test />} />
             <Route path="/fetchdata" element={<FetchDataHook />} />
             <Route path="/dragdrop" element={<DragDrop />} />
+            <Route path="/infinite-scroll" element={<InfiniteScroll />} />
            
         </Routes>
       </div>
