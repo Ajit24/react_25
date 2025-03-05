@@ -18,7 +18,10 @@ import Test from './Test';
 import FetchDataHook from './Pages/FetchDataHook/FetchDataHook';
 import DragDrop from './Pages/DragDrop/DragDrop';
 import InfiniteScroll from './Pages/InfiniteScroll/InfiniteScroll';
+import VirtualizedList from './Pages/VirtualizedList/VirtualizedList';
 function App() {
+  const LIST = Array.from({ length: 100000 }, (_, index) => index + 1);
+
   return (
     <div className="App">
        <Router>
@@ -41,6 +44,7 @@ function App() {
             <Route path="/fetchdata" element={<FetchDataHook />} />
             <Route path="/dragdrop" element={<DragDrop />} />
             <Route path="/infinite-scroll" element={<InfiniteScroll />} />
+            <Route path="/list" element={<VirtualizedList list={LIST} height={400} width={300} itemHeight={35}  />} />
            
         </Routes>
       </div>

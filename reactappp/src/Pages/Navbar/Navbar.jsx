@@ -24,6 +24,8 @@ const Navbar = () => {
         {/* <li><Link to='/test' className='nav-link'>Test</Link></li> */}
         <li><Link to='/dragdrop' className='nav-link'>DragDrop</Link></li>
         <li><Link to='/infinite-scroll' className='nav-link'>infinite_scroll</Link></li>
+        <li><Link to='/list' className='nav-link'>VirtualizedList</Link></li>
+
 
 
 
